@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+
+    <svg width="960" height="500"></svg>
+    <script src='introducao.js'></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+<script>
+    var svg = d3.select("svg"),
+    margin = {top: 20, right: 20, bottom: 30, left: 40},
+    width = +svg.attr("width") - margin.left - margin.right,
+    height = +svg.attr("height") - margin.top - margin.bottom;
+    
+    console.log(svg)
+</script>
+<body>
+    
+</body>
+</html>
