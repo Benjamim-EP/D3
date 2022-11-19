@@ -187,21 +187,31 @@
                 ]
             };
 
-            // Instantiate Line Chart
-            const lineChart = britecharts.line();
-            
+           // Instantiate Components
+           const lineChart = britecharts.line();
+            const chartTooltip = britecharts.tooltip();
+            const chartLegend = britecharts.legend();
 
             const container = d3.select('.line-container');
+            const legendContainer = d3.select('.legend-container');
             const containerWidth = container.node().getBoundingClientRect().width;
 
             // Configure chart
             lineChart
                 .margin({ bottom: 50 })
                 .height(400)
-                .width(containerWidth);
+                .width(containerWidth)
+                .on('customMouseOver', chartTooltip.show)
+                .on('customMouseMove', chartTooltip.update)
+                .on('customMouseOut', chartTooltip.hide);
 
             // Render chart
             container.datum(lineData).call(lineChart);
+
+            // Attach tooltip to line chart
+            const tooltipContainer = d3.select('.line-container .metadata-group .hover-marker');
+            tooltipContainer.call(chartTooltip);
+            
 
             // Responsiveness
             const redrawChart = () => {
