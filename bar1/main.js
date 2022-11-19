@@ -1,4 +1,4 @@
-import bar from './bar1.js';
+import bar from '../bar1.js';
 
 
 let container = d3.select('.chart-container');
