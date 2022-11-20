@@ -1,0 +1,34 @@
+{
+  "name": "pro-d3-building",
+  "version": "1.0.0",
+  "description": "Demo package for the package building chapter on Pro D3.js",
+  "main": "dist/proD3Building.min.js",
+  "scripts": {
+    "test": "yarn test",
+    "dev": "webpack-dev-server --env=dev",
+    "build": "webpack --config webpack.config.js --env=production"
+  },
+  "keywords": [
+    "d3.js",
+    "build",
+    "package",
+    "npm"
+  ],
+  "author": "Marcos Iglesias Valle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Golodhros/pro-d3-building/issues"
+  },
+  "homepage": "https://github.com/Golodhros/pro-d3-building#readme",
+  "devDependencies": {
+    "css-loader": "^3.0.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.35.2",
+    "webpack-cli": "^3.3.5",
+    "webpack-merge": "^4.2.1",
+    "d3": "^5.9.7"
+  },
+  "peerDependencies": {
+    "d3": "^5.9.7"
+  }
+}

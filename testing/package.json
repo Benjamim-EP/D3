@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "yarn": "^1.22.19"
+  },
+  "scripts": {
+    "test": "karmatic",
+    "test:watch": "karmatic watch --no-headless"
+  },
+  "devDependencies": {
+    "karmatic": "^2.1.0",
+    "webpack": "^5.75.0",
+    "karma-webpack": "^5.0.0-alpha.3.0"
+  }
+}
