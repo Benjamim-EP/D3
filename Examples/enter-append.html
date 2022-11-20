@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
+</head>
+<body>
+    <div id="content"></div> 
+    <script>
+        //[{height:10, width:10}, {height:20, width:20}]
+
+        let letters = "ASDASFASFA"
+        letters = letters.split("");
+        d3.select("#content")
+            .selectAll("div")
+            .data(letters)
+            .enter()
+            .append("div")
+            .text(d => d)
+        
+    </script>
+</body>
+
+<style>
+    body{
+        font-size: 14px;
+        color: #333;
+    }
+    #menu{
+        margin: 10px;
+    }
+    #content div{
+        display: inline-block;
+        margin: 2px;
+        background-color: orange;
+        color: white;
+        padding: 8px;
+        width: 100px;
+        height: 14px;
+        text-align: center;
+    }
+</style>
+</html>
