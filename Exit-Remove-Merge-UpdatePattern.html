@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
+</head>
+<body>
+    <div id="content"></div>
+    <button onclick="makeNewData()">randomize</button>
+    <div id="dataDisplayer">Data:</div> 
+
+    <script>
+        //[{height:10, width:10}, {height:20, width:20}]
+        function makeNewData(){
+            let letters = "Benjamim"
+            letters = letters.slice(0,Math.floor(Math.random()*8)).split("");
+            document.getElementById("dataDisplayer").innerHTML = letters
+            redraw(letters)
+        }
+        function redraw(receivedData){
+            let divs = d3
+                .select("#content")
+                .selectAll("div")
+                .data(receivedData)
+
+            divs
+                .enter()
+                .append("div")
+                .text(d => d)
+            divs.exit().remove();
+        }
+
+        makeNewData();
+    </script>
+</body>
+
+<style>
+    body{
+        font-size: 14px;
+        color: #333;
+    }
+    #menu{
+        margin: 10px;
+    }
+    #content div{
+        display: inline-block;
+        margin: 2px;
+        background-color: orange;
+        color: white;
+        padding: 8px;
+        width: 100px;
+        height: 14px;
+        text-align: center;
+    }
+</style>
+</html>
